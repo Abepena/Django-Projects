@@ -1,0 +1,5 @@
+name: django-env
+dependencies:
+- python
+- pip
+- django=2.0.2
