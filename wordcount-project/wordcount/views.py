@@ -30,3 +30,6 @@ def count(request):
         "count.html",
         {"fulltext": fulltext, "count": count, "sorted_words": sorted_words},
     )
+
+def about(request):
+    return render(request,'about.html')
