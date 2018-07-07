@@ -1,7 +1,57 @@
-{% extends "base.html" %}
-
+{% extends "jobs/base.html" %} 
 
 {% block content %}
-    Beginning of my portfolio homepage
-{% endblock  %}
-    
+<main role="main">
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Abe the
+                <span class="rotating">developer</span>
+            </h1>
+            <p class="lead text-muted">
+                Web developer and creator passionate about creating functional web applications.
+            </p>
+            <p>
+                <a href="mailto:pena.abe@gmail.com" class="btn btn-primary my-2">Contact Me</a>
+            </p>
+        </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+
+            <div class="row">
+                {% for job in jobs.all  %}
+                <div class="col-md-4">
+                    <div class="card mb-4 box-shadow">
+                        <img class="card-img-top" src="{{ job.image.url }}">
+                        <div class="card-body">
+                            <p class="card-text">
+                                {{ job.summary }}
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+</main>
+
+<footer class="text-muted">
+    <div class="container text-center">
+        <p>Abe Pena &copy {% now "Y"%} </p>
+    </div>
+</footer>
+{% endblock %}
