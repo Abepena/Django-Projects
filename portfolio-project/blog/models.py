@@ -14,3 +14,13 @@ class Blog(models.Model):
 
     def __str__(self):
         return self.title
+
+    def summary(self):
+        #Shows only the first 200 characters of a blog post
+        return self.body[:200]
+
+    def date_only(self):
+        #Customizes pub_date field to how you want it to look exactly
+        #based on datetime.datetime
+        #Reference: http://strftime.org/
+        return self.pub_date.strftime('%A %B %d, %Y')
