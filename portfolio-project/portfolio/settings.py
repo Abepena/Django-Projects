@@ -140,7 +140,7 @@ MEDIA_URL = '/media/'
 try:
     # Caution: anything with the same name as a variable 
     # in local_settings.py will be overwritten 
-    from local_settings import *
+    from .local_settings import *
 except:
     # Do nothing if no local_settings.py file
     pass 
