@@ -124,7 +124,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-
+#Create Static Files, root , url , and directories to look for 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
@@ -135,3 +135,12 @@ STATICFILES_DIRS = [
 # Media Files (Images, Video, Etc)
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+#local_settings import to store settings more securely
+try:
+    # Caution: anything with the same name as a variable 
+    # in local_settings.py will be overwritten 
+    from local_settings import *
+except:
+    # Do nothing if no local_settings.py file
+    pass 
