@@ -7,7 +7,7 @@ class Blog(models.Model):
     Each blog post will have a title,
     publication date, body, and image field
     """
-    title = models.CharField(max_length=200, default=f"Post Title")
+    title = models.CharField(max_length=200, default="Post Title")
     pub_date = models.DateTimeField()
     body = models.TextField()
     image = models.ImageField(upload_to='images/')

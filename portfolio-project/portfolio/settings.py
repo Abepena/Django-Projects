@@ -144,3 +144,4 @@ try:
 except:
     # Do nothing if no local_settings.py file
     pass 
+
