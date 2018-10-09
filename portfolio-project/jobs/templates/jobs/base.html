@@ -9,20 +9,19 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
-    <title> My first blog post</title>
+    <title>Abe Pena</title>
+    <link rel="stylesheet" href="{% static 'jobs/css/style.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     {% block style %}
-        
-    {% endblock %}
-        
+    {% endblock %}  
 </head>
 
 <body>
     <!-- Main content to be extended from later-->
+    {% block body %} 
+    {% endblock %}
     {% include 'jobs/_navbar.html' %} 
-    <div class="container">
-        {% block body %} 
-        {% endblock %}
-    </div>
+ 
     <!-- Bootstrap jquery, popper, and JS scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

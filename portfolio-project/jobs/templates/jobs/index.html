@@ -2,74 +2,107 @@
 {% load static %}
 
 
-{% block title %} Abe Pena{% endblock  %}
-    
-
-{% block style %}
-    <style>
-        #headshot {
-            border-radius: 50%;
-        }
-    </style>
-{% endblock  %}
-    
+{% block title %} Abe Pena{% endblock  %}    
 
 {% block body %}
-<main role="main">
-
-    <section class="jumbotron text-center">
-        <div class="container">
-            <h1 class="jumbotron-heading">Abe the
-                <span class="rotating">developer</span>
-            </h1>
-            <p class="lead text-muted">
-                Web developer and creator, passionate about creating functional web applications.
-            </p>
-            <p>
-                <a href="mailto:pena.abe@gmail.com" class="btn btn-primary my-2">Contact Me</a>
-            </p>
-            <img id="headshot"src="{% static 'headshot.jpg' %}" height="300px" alt="Abe Headshot">
-        </div>
-        <div class="container">
-            <div class="buttons">
-                <ul>
-                    <li><a href="github.com/abepena">Github</a></li>
-                    <li><a href="{% static 'resume_placeholder.pdf' %}">Resume</a></li>
-                    <li><a href="">Blog</a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <div class="album py-5 bg-light projects">
-        <div class="container">
-
-            <div class="row">
-                {% for job in jobs.all  %}
-                <div class="col-md-6">
-                    <div class="card mb-4 box-shadow">
-                        <img class="card-img-top" src="{{ job.image.url }}">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ job.name }} </h5>
-                            <p class="card-text">
-                                {{ job.summary|linebreaks }}
-                            </p>
+    <header class="full-pg-section">
+        <!-- Clip path Backgrounds behind section-->
+        <div class="bg"></div>
+        <div class="bg2"></div>
+        {% include "jobs/_home_navbar.html" %}
+        <div class="header-content">
+            <div class="container">
+                <div class="row">
+                    <div class="left col-md-6">
+                        <h1 class="header-title">Abe The <span class="rotating">Developer</span></h1>
+                        <p class="header-subtitle">Software Developer that sweats the small things. Passionate about all that involves code.</p>
+                    </div>
+                    <div class="right col-md-6">
+                        <div class="header-buttons">
+                            <a class="btn-header"href="http://github.com/abepena" target="_blank">
+                                <img src="{% static 'jobs/images/github-octocat.svg' %}" alt="github" class="logo">
+                                <span>
+                                    <strong>Github</strong>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quibusdam.</p>
+                                </span>
+                            </a>
+                            <a class="btn-header"href="#projects">
+                                <img src="{% static 'jobs/images/coding.svg' %}" alt="projects" class="logo">
+                                <span>
+                                    <strong>Projects</strong>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quibusdam.</p>
+                                </span>
+                            </a>
+                            <a class="btn-header"href="{% url 'blog' %}">
+                                <img src="{% static 'jobs/images/blogging.svg' %}" alt="blog" class="logo">
+                                <span>
+                                    <strong>Blog</strong>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quibusdam.</p>
+                                </span>
+                            </a>
                         </div>
                     </div>
                 </div>
-                {% endfor %}
             </div>
         </div>
-    </div>
-    </div>
-    </div>
-    </div>
+    </header>
 
-</main>
+    <main class="main">
+        <div class="main-raised">
+            <section id="#jobs" class="half-page">
 
-<footer class="text-muted">
-    <div class="container text-center">
-        <p>Abe Pena &copy {% now "Y"%} </p>
-    </div>
-</footer>
+                    <div class="container">
+                        <div class="row">
+                            {% for job in jobs.all  %}
+                            <div class="col-md-6">
+                                <div class="card mb-4 box-shadow">
+                                    <img class="card-img-top" src="{{ job.image.url }}">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ job.name }} </h5>
+                                        <p class="card-text">
+                                            {{ job.summary|linebreaks }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+            </section>
+            <section id="#about" class="half-page">
+                <div class="container">
+                    <h2 class="text-center py-5"> Who I am</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facilis consequatur commodi enim, animi, velit repudiandae laborum atque, quas tempora dicta veritatis! Quis minus tempora rem eaque dolorem dolore id, libero cumque molestiae doloremque amet similique aliquam reprehenderit placeat soluta ab veritatis harum sequi atque magnam distinctio magni quaerat? Aut aperiam alias ex, illo deleniti sed suscipit assumenda esse quis eligendi accusamus dolorem eum ab optio minima laborum accusantium asperiores veniam velit officia nam ad odit quasi tempore. Labore magni, molestias eaque quo consequuntur necessitatibus praesentium quos saepe assumenda laboriosam eligendi qui maiores? Odit delectus et aperiam amet vel quis.
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <img class="img-fluid" src="{% static 'jobs/images/about-pic.jpg'%}" alt="Portait of me">
+                        </div>
+                    </div>
+                </div> 
+            </section>
+            <section id="#contact" class="half-page">
+            </section>
+
+            <div class="container">
+
+                <p>
+                    <a href="mailto:pena.abe@gmail.com" class="btn btn-primary my-2">Contact Me</a>
+                </p>
+                
+            </div>
+            
+                
+       
+        </div>
+    </main>
+    
+    <footer class="text-muted">
+        <div class="container text-center">
+            <p>Abe Pena &copy {% now "Y"%} </p>
+        </div>
+    </footer>
 {% endblock %}

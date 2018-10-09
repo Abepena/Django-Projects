@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'jobs',
     'blog',
+    # Livereload for development... live reload script in MIDDLEWARE also needed
+    'livereload',
 ]
 
 MIDDLEWARE = [
@@ -49,6 +51,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # Live reload script
+    'livereload.middleware.LiveReloadScript',
 ]
 
 ROOT_URLCONF = 'portfolio.urls'
@@ -129,6 +133,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'portfolio/static/'),
+    os.path.join(BASE_DIR, 'jobs/static/'),
 ]
 
 
