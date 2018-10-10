@@ -1,108 +1,183 @@
-{% extends "jobs/base.html" %} 
-{% load static %}
+{% extends "jobs/base.html" %} {% load static %} {% block title %} Abe Pena{% endblock %} {% block body %}
+<header class="full-pg-section">
+    <!-- Clip path Backgrounds behind section-->
+    <div class="bg"></div>
+    <div class="bg2"></div>
+    {% include "jobs/_home_navbar.html" %}
+    <div class="header-content">
+        <div class="container">
+            <div class="row">
+                <div class="left col-md-6">
+                    <h1 class="header-title">Abe The <span class="rotating">Developer</span></h1>
+                    <p class="header-subtitle">Software Developer that sweats the small things. Passionate about all that
+                        involves code.</p>
 
-
-{% block title %} Abe Pena{% endblock  %}    
-
-{% block body %}
-    <header class="full-pg-section">
-        <!-- Clip path Backgrounds behind section-->
-        <div class="bg"></div>
-        <div class="bg2"></div>
-        {% include "jobs/_home_navbar.html" %}
-        <div class="header-content">
-            <div class="container">
-                <div class="row">
-                    <div class="left col-md-6">
-                        <h1 class="header-title">Abe The <span class="rotating">Developer</span></h1>
-                        <p class="header-subtitle">Software Developer that sweats the small things. Passionate about all that involves code.</p>
-                    </div>
-                    <div class="right col-md-6">
-                        <div class="header-buttons">
-                            <a class="btn-header"href="http://github.com/abepena" target="_blank">
-                                <img src="{% static 'jobs/images/github-octocat.svg' %}" alt="github" class="logo">
-                                <span>
-                                    <strong>Github</strong>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quibusdam.</p>
-                                </span>
-                            </a>
-                            <a class="btn-header"href="#projects">
-                                <img src="{% static 'jobs/images/coding.svg' %}" alt="projects" class="logo">
-                                <span>
-                                    <strong>Projects</strong>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quibusdam.</p>
-                                </span>
-                            </a>
-                            <a class="btn-header"href="{% url 'blog' %}">
-                                <img src="{% static 'jobs/images/blogging.svg' %}" alt="blog" class="logo">
-                                <span>
-                                    <strong>Blog</strong>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quibusdam.</p>
-                                </span>
-                            </a>
-                        </div>
+                </div>
+                <div class="right col-md-6">
+                    <div class="header-buttons">
+                        <a class="btn-header" href="http://github.com/abepena" target="_blank">
+                            <img src="{% static 'jobs/images/github-octocat.svg' %}" alt="github" class="logo">
+                            <span>
+                                <strong>Github</strong>
+                                <p>Check out what I've been coding and working on recently</p>
+                            </span>
+                        </a>
+                        <a class="btn-header" href="#projects">
+                            <img src="{% static 'jobs/images/coding.svg' %}" alt="projects" class="logo">
+                            <span>
+                                <strong>Projects</strong>
+                                <p>Things I've worked on in the past, and passion projects in progress</p>
+                            </span>
+                        </a>
+                        <a class="btn-header" href="{% url 'blog' %}">
+                            <img src="{% static 'jobs/images/blogging.svg' %}" alt="blog" class="logo">
+                            <span>
+                                <strong>Blog</strong>
+                                <p>The start of a journey of documenting my coding adventures</p>
+                            </span>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
+    </div>
+</header>
 
-    <main class="main">
-        <div class="main-raised">
-            <section id="#jobs" class="half-page">
+<main class="main">
+    <div class="main-raised">
+        <div class="container">
+            <h2 class="pb-4 text-center">Skills</h2>
+            <ul class="skills">
+                <div class="row">
+                    <div class="col-md-6 d-flex justify-content-around align-items-start py-3">
+                        <span>
+                            <li class="skill"><img class="img-fluid" src="{% static 'jobs/images/django.svg' %}" alt="django"></li>
+                            <p></p>
+                        </span>
 
-                    <div class="container">
-                        <div class="row">
-                            {% for job in jobs.all  %}
-                            <div class="col-md-6">
-                                <div class="card mb-4 box-shadow">
-                                    <img class="card-img-top" src="{{ job.image.url }}">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ job.name }} </h5>
-                                        <p class="card-text">
-                                            {{ job.summary|linebreaks }}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            {% endfor %}
-                        </div>
+                        <span><li class="skill"><img class="img-fluid" src="{% static 'jobs/images/python-5.svg'%}" alt="Python"></li>
+                            <p class=""></p></span>
+                        <span><li class="skill"><img class="img-fluid mx-auto" src="{% static 'jobs/images/postgresql.svg'%}" alt="Postgres"></li>
+                            <p class=""></p></span>
+                        <span><li class="skill"><img class="img-fluid" src="{% static 'jobs/images/javascript.svg'%}" alt=""></li>
+                            <p
+                                class=""></p></span>
                     </div>
-            </section>
-            <section id="#about" class="half-page">
-                <div class="container">
-                    <h2 class="text-center py-5"> Who I am</h2>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p class="">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facilis consequatur commodi enim, animi, velit repudiandae laborum atque, quas tempora dicta veritatis! Quis minus tempora rem eaque dolorem dolore id, libero cumque molestiae doloremque amet similique aliquam reprehenderit placeat soluta ab veritatis harum sequi atque magnam distinctio magni quaerat? Aut aperiam alias ex, illo deleniti sed suscipit assumenda esse quis eligendi accusamus dolorem eum ab optio minima laborum accusantium asperiores veniam velit officia nam ad odit quasi tempore. Labore magni, molestias eaque quo consequuntur necessitatibus praesentium quos saepe assumenda laboriosam eligendi qui maiores? Odit delectus et aperiam amet vel quis.
-                            </p>
-                        </div>
-                        <div class="col-md-6">
-                            <img class="img-fluid" src="{% static 'jobs/images/about-pic.jpg'%}" alt="Portait of me">
-                        </div>
+                    <div class="col-md-6 d-flex justify-content-around align-items-start py-3">
+                        <li class="skill"><img class="img-fluid" src="{% static 'jobs/images/html5.svg'%}" alt=""></li>
+                        <li class="skill"><img class="img-fluid" src="{% static 'jobs/images/css-3.svg'%}" alt=""></li>
+                        <li class="skill"><img class="img-fluid py-3" src="{% static 'jobs/images/sass-1.svg'%}" alt=""></li>
+                        <li class="skill"><img class="img-fluid py-2" src="{% static 'jobs/images/bootstrap-4.svg'%}" alt=""></li>
                     </div>
-                </div> 
-            </section>
-            <section id="#contact" class="half-page">
-            </section>
+                </div>
 
+            </ul>
+        </div>
+        <section id="#jobs" class="">
+            <h2 class="text-center py-4">Past Jobs</h2>
             <div class="container">
-
-                <p>
-                    <a href="mailto:pena.abe@gmail.com" class="btn btn-primary my-2">Contact Me</a>
-                </p>
-                
+                <div class="row">
+                    {% for job in jobs.all %}
+                    <div class="col-md-6">
+                        <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src="{{ job.image.url }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ job.name }} </h5>
+                                <p class="card-text">
+                                    {{ job.summary|linebreaks }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
-            
-                
-       
+        </section>
+        <section id="#about" class="half-page">
+            <div class="container">
+                <h2 class="text-center py-3"> Who I am</h2>
+                <div class="row">
+                    <div class="col-md-6 order-md-last mb-4 align-self-center">
+                        <img class="img-fluid my-auto rounded shadow my-auto" src="{% static 'jobs/images/about-pic.jpg'%}" alt="Portait of me">
+                    </div>
+                    <div class="col-md-6">
+                        <p class="">
+                            In a nutshell I would consider myself a lifelong learner. I get enjoyment from learning as much as I can today for that day
+                            when someone asks for my help in the future. In college I studied Aerospace Engineering and I
+                            worked on some pretty cool projects and teams prototyping, testing, and shipping real products
+                            out there in the world today. Nowadays what I get my enjoyment from is making something from
+                            just an idea with code.
+                        </p>
+
+                        <p>
+                            I'm happy as long as there is a problem to solve and even happier if I get to teach myself something new solving it. Even
+                            after long days at work I found myself wanting to do more, wanting to learn more to be more precise,
+                            so I could do my job more effectively or just to pick up a new skill/hobby. So I started teaching
+                            myself to program with Python.
+                        </p>
+
+                        <p>
+                            Once I started I just couldn't stop! <strong>I got hooked!</strong> Learning <strong>Python</strong>,
+                            led to teaching myself <strong>HTML</strong>, <strong>CSS</strong>, <strong>Javascript</strong>,
+                            <strong>SQL</strong>, and frameworks like <strong>Django</strong>. All of which were used to
+                            build this website. And of course, coming from Aerospace Design I have experience with 3D modeling
+                            software.
+                        </p>
+                        <p>
+                            My goals for the future are to continue to do meaningful work, learn every day, and I hope to one day share all that knowledge
+                            aspiring developers that come after me or team members at my next job.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="#contact" class="">
+            <div class="container">
+                <h2 class="text-center">Contact Me</h2>
+                <div class="row">
+                    <div class="col-md-6 mx-auto">
+
+                        <div class="text-center">
+
+                        </div>
+                        <strong>
+                            <p>You can reach me directly here:</p>
+                        </strong>
+                        <a href="tel:949-836-6285" class="text-dark">
+                            <i class="fas fa-phone-square fa-lg mr-2"></i>949-836-6285
+                        </a><br>
+                        <a href="mailto:pena.abe@gmail.com" class="text-dark">pena.abe@gmail.com</a>
+
+
+                        <form>
+                            <div class="form-group">
+                                <label for="email">Email address:</label>
+                                <input type="email" class="form-control" id="email" placeholder="Email to reach back to">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message:</label>
+                                <textarea class="form-control" id="message" rows="4"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+
+
         </div>
-    </main>
-    
-    <footer class="text-muted">
-        <div class="container text-center">
-            <p>Abe Pena &copy {% now "Y"%} </p>
-        </div>
-    </footer>
+
+
+
+    </div>
+</main>
+
+<footer class="text-muted">
+    <div class="container text-center">
+        <p class="my-2 py-2">Abe Pena &copy {% now "Y"%} </p>
+    </div>
+</footer>
 {% endblock %}

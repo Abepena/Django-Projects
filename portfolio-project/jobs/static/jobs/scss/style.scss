@@ -5,28 +5,41 @@ $gray: #636262;
 $light-gray: #6B6E70;
 $white: #fff;
 $break-medium: 768px;
+
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Roboto Slab', serif;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 body {
   background: $background-color;
   color: $light-gray;
 
 
-  .full-pg-section {
+  header {
     height: 100vh;
     display: grid;
 
-    .navbar-white .navbar-brand{
-      font-size: 2em
-    }
     .navbar-white a {
       font-size: 1.2rem;
       color: $white;
+      @media screen and (max-width: $break-medium) {
+        font-size: 1em;
+      }
     }
+    .navbar-white .navbar-brand{
+      font-size: 2em;
+      @media screen and (max-width: $break-medium) {
+        font-size: 1.5em;
+      }
+    }
+
 
     .bg,
     .bg2 {
@@ -59,10 +72,6 @@ body {
       flex-direction: column;
       justify-content: center;
 
-      .headshot {
-        width: 50%;
-        border-radius: 50%
-      }
 
       .header-title {
         font-size: 3rem;
@@ -80,6 +89,7 @@ body {
           font-size: 1rem;
         }
       }
+
     }
 
     .header-buttons {
@@ -143,6 +153,21 @@ body {
           margin-left: 10px;
         }
       }
+    }
+  }
+
+      
+  .skills {
+    list-style: none;
+    padding: 0;
+
+    .skill{
+      img {
+        display: block;
+      }
+      color: black;
+      width:50px;
+      margin:0;
     }
   }
 
