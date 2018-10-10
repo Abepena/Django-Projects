@@ -39,8 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'jobs',
     'blog',
-    # Livereload for development... live reload script in MIDDLEWARE also needed
-    'livereload',
 ]
 
 MIDDLEWARE = [
@@ -51,8 +49,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # Live reload script
-    'livereload.middleware.LiveReloadScript',
 ]
 
 ROOT_URLCONF = 'portfolio.urls'
