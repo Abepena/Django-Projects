@@ -10,6 +10,10 @@ h1,h2,h3,h4,h5,h6{
   font-family: 'Roboto Slab', serif;
 }
 
+.navbar-white.bg-gray {
+  background-color: $background-color;
+}
+
 html,
 body {
   margin: 0;
@@ -26,6 +30,9 @@ body {
     height: 100vh;
     display: grid;
 
+    .navbar-white {
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
     .navbar-white a {
       font-size: 1.2rem;
       color: $white;
@@ -35,6 +42,7 @@ body {
     }
     .navbar-white .navbar-brand{
       font-size: 2em;
+      font-family: 'Satisfy', cursive;
       @media screen and (max-width: $break-medium) {
         font-size: 1.5em;
       }

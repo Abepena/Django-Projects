@@ -2,6 +2,10 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto Slab', serif;
 }
 
+.navbar-white.bg-gray {
+  background-color: #222629;
+}
+
 html,
 body {
   margin: 0;
@@ -22,6 +26,11 @@ body header {
   display: grid;
 }
 
+body header .navbar-white {
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
 body header .navbar-white a {
   font-size: 1.2rem;
   color: #fff;
@@ -35,6 +44,7 @@ body header .navbar-white a {
 
 body header .navbar-white .navbar-brand {
   font-size: 2em;
+  font-family: 'Satisfy', cursive;
 }
 
 @media screen and (max-width: 768px) {
